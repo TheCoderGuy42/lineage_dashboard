@@ -1,0 +1,15 @@
+{
+  "files.exclude": {
+    ".venv": true,
+    "**/__pycache__": true,
+    "**/.pytest_cache": true,
+    "**/.hypothesis": true,
+    "**/pytest.ini": true,
+    "**/lineage.egg-info": true
+  },
+  "python.pythonPath": "${workspaceFolder}/.venv/bin/python",
+
+  "python.analysis.extraPaths": ["src"],
+  "python.testing.pytestEnabled": true,
+  "python.testing.pytestArgs": ["tests"]
+}
