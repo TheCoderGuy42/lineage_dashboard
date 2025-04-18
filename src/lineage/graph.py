@@ -1,7 +1,13 @@
 from collections import deque
+import  sqlite3
 
 class LineageGraph: 
-  def __init__(self):
+  def __init__(self, store=None):
+
+    if store:
+      conn = sqlite3.connect("customer.db")
+      c = conn.cursor()
+      c.execute("CREATE TABLE edges (src TEXT, dst TEXT, type TEXT, PRIMARY KEY(src,dst,type))") 
     self.edges = set() # holds 
     self.nodes = set()
     self.adjacency_list = {}
@@ -68,9 +74,3 @@ class LineageGraph:
     
 
   
-
-def main():
-  pass
-
-if __name__ == "__main__":
-  main()
